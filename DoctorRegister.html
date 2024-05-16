@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;600&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" />
+</head>
+<body>
+    <div class="emergency-contact">
+        <header class="navbar">
+            <div class="logolandie">
+                <div class="logo">
+                    <img class="logo-child" loading="lazy" alt="Health Link Logo" src="./images/Logo.png" />
+                </div>
+            </div>
+            <div class="nav">
+                <button class="elementbuttonsmallfilled" id="elementButtonSmallFilledContainer">
+                    <div class="bg"></div>
+                    <div class="button-label">Emergency Contact</div>
+                </button>
+                <button class="elementbuttonsmallfilled1" id="elementButtonSmallFilledContainer1">
+                    <div class="bg1"></div>
+                    <div class="button-label1">I’m a Doctor</div>
+                </button>
+                <button class="elementbuttonsmallfilled2" id="elementButtonSmallFilledContainer2">
+                    <div class="bg2"></div>
+                    <div class="button-label2">I’m a Patient</div>
+                </button>
+            </div> 
+        </header>
+        <main class="emergency-contact-inner">
+            <section class="frame-parent">
+                <div class="login-container">
+                    <h2>Doctor Register</h2>
+                    <form>
+                        <div class="input-group">
+                            <input type="email" placeholder="Email" required>
+                            <input type="password" placeholder="Password" required>
+                            <input type="password" placeholder="Confirm Password" required>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit">Register Doctor</button>
+                        </div>
+                        <p class="register-doctor">Already have an account? <a href="LoginDoctor.html" style="color: #666666;"> Login as a doctor</a></p>
+                    </form>
+                </div>
+                <img class="public-health-rafiki-1" loading="lazy" alt="" src="images/Right Banner-3.png" />
+            </section>
+        </main>
+                    
+    </div>
+
+    <script>
+        document.getElementById("elementButtonSmallFilledContainer").addEventListener("click", function () {
+            window.location.href = "index.html";
+        });
+        document.getElementById("elementButtonSmallFilledContainer1").addEventListener("click", function () {
+            window.location.href = "LoginDoctor.html"; 
+        });
+        document.getElementById("elementButtonSmallFilledContainer2").addEventListener("click", function () {
+            window.location.href = "LoginPatient.html"; 
+        });
+    </script>
+</body>
+</html>
