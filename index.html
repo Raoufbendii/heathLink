@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;600&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" />
+</head>
+<body>
+    <div class="emergency-contact">
+        <header class="navbar">
+            <div class="logolandie">
+                <div class="logo">
+                    <img class="logo-child" loading="lazy" alt="Health Link Logo" src="./images/Logo.png" />
+                </div>
+            </div>
+            <div class="nav">
+                <button class="elementbuttonsmallfilled" id="elementButtonSmallFilledContainer">
+                    <div class="bg"></div>
+                    <div class="button-label">Emergency Contact</div>
+                </button>
+                <button class="elementbuttonsmallfilled1" id="elementButtonSmallFilledContainer1">
+                    <div class="bg1"></div>
+                    <div class="button-label1">I’m a Doctor</div>
+                </button>
+                <button class="elementbuttonsmallfilled2" id="elementButtonSmallFilledContainer2">
+                    <div class="bg2"></div>
+                    <div class="button-label2">I’m a Patient</div>
+                </button>
+            </div> 
+        </header>
+        <main class="emergency-contact-inner">
+            <section class="frame-parent">
+                <div class="frame-wrapper">
+                    <div class="ambulance-button-parent">
+                        <div class="ambulance-button">
+                            <h2 class="chef-login">Emergency Contact</h2>
+                            <h4 class="lorem-ipsum-dolor">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                            </h4>
+                        </div>
+                        <div class="ambulance-button1">
+                            <h4 class="call-ambulance-xxxxxxxxxxxx">
+                                Call ambulance: xxxxxxxxxxxx
+                            </h4>
+                            <div class="suwaseriya-1990">Suwaseriya: 1990</div>
+                        </div>
+                    </div>
+                </div>
+                <img class="public-health-rafiki-1" loading="lazy" alt="" src="./images/Public health-rafiki 1.svg" />
+            </section>
+        </main>
+    </div>
+
+    <script>
+        document.getElementById("elementButtonSmallFilledContainer").addEventListener("click", function () {
+            window.location.href = "index.html";
+        });
+        document.getElementById("elementButtonSmallFilledContainer1").addEventListener("click", function () {
+            window.location.href = "LoginDoctor.html"; 
+        });
+        document.getElementById("elementButtonSmallFilledContainer2").addEventListener("click", function () {
+            window.location.href = "LoginPatient.html"; 
+        });
+    </script>
+</body>
+</html>
