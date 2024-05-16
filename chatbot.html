@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard</title>
+    <link rel="stylesheet" href="./dashboardpatient.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-8RZnVu7SbqPmczv2AapF/hQeS9xKUdEmJ9EkAuL4Vl5tD6dO3COfNUz7lR4OYi5JM34Ygp1x9jZyqHt/6oW3kA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Your CSS styles here */
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="images/Logo.png" alt="Health Link Logo">
+        </div>
+        <h3 class="sidebar-header">Sessions</h3>
+        <nav class="menu">
+            <ul>
+                <li><a href="#"><i class="fas fa-user-md"></i> Connect with Doctor</a></li>
+                <li><a href="chatbot.html"><i class="fas fa-comment-medical"></i> Chat with HealthBot</a></li>
+                <li><a href="#"><i class="fas fa-clock"></i> Patient Waiting Queue</a></li>
+            </ul>
+        </nav>
+        <h3 class="sidebar-header">Other Options</h3>
+        <nav class="bottom-menu">
+            <ul>
+                <li><a href="PatientDashboard.html"><i class="fas fa-columns"></i> Dashboard</a></li>
+                <li><a href="LoginPatient.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </nav>
+    </div>    
+    <div class="chat-container">
+        <h2>Patient HealthBot Chat</h2>
+        <div class="chat-box" id="chat-box">
+            <div class="message received">
+                <p>Hello! How can I assist you today?</p>
+            </div>
+            <!-- Previous chat messages go here -->
+        </div>
+        <div class="chat-input">
+            <input id="user-input" type="text" placeholder="Type your message...">
+            <button id="send-btn" type="button"><i class="fas fa-paper-plane"></i> Send</button>
+        </div>
+    </div>
+    
+
+    <script>
+        document.getElementById("send-btn").addEventListener("click", sendMessage);
+        document.getElementById("user-input").addEventListener("keypress", function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        let sessionID = generateSessionID(); // Generate a session ID
+        
+        function generateSessionID() {
+            // Generate a unique session ID using JavaScript
+            return Math.random().toString(36).substr(2, 9);
+        }
+    
+        function sendMessage() {
+            var userInput = document.getElementById("user-input").value.trim();
+            if (userInput !== "") {
+                var chatBox = document.getElementById("chat-box");
+                
+                // Display user message
+                displayMessage(userInput, "sent");
+    
+                // Send message to the server
+                sendMessageToServer(userInput)
+                    .then(response => {
+                        // Display server response
+                        displayMessage(response.response, "received");
+                    })
+                    .catch(error => {
+                        console.error("Error sending message:", error);
+                        displayMessage("Oops! Something went wrong.", "received");
+                    });
+                
+                // Scroll to the bottom of the chat box
+                chatBox.scrollTop = chatBox.scrollHeight;
+    
+                // Clear the input field
+                document.getElementById("user-input").value = "";
+            }
+        }
+    
+        function displayMessage(message, messageType) {
+            var chatBox = document.getElementById("chat-box");
+            var messageDiv = document.createElement("div");
+            messageDiv.classList.add("message", messageType);
+            messageDiv.innerHTML = "<p>" + message + "</p>";
+            chatBox.appendChild(messageDiv);
+        }
+    
+        function sendMessageToServer(message) {
+            return fetch('http://127.0.0.1:8080/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ prompt: message, sessionID: sessionID }), // Include sessionID in the request
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            });
+        }
+    </script>
+    
+</body>
+</html>
