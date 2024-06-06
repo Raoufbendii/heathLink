@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard</title>
+    <link rel="stylesheet" href="./dashboardpatient.css" />
+
+</head>
+<style>
+
+
+h2 {
+    color: #004498;
+    margin-bottom: 20px;
+    text-align: left; /* Centers the header */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+thead {
+    background-color: #f4f4f4;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+}
+
+.meet-link {
+    position: relative;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow:#ccc;
+    width: 100%;
+    margin-top: 30px;
+    background-color: #f9f9f9;
+}
+
+.meet-link h3 {
+    margin-top: 0;
+    color: #004498;
+}
+
+
+</style>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="images/Logo.png" alt="Health Link Logo">
+        </div>
+        <h3 class="sidebar-header">Sessions</h3>
+        <nav class="menu">
+            <ul>
+                <li><a href="#"><img src="images/Customers.svg" alt="Connect with Doctor" class="icon"> Connect with Doctor</a></li>
+                <li><a href="chatbot.html"><img src="images/message.svg" alt="Chat with HealthBot" class="icon"> Chat with HealthBot</a></li>
+                <li><a href="#"><img src="images/time.svg" alt="Patient Waiting Queue" class="icon"> Patient Waiting Queue</a></li>
+            </ul>
+        </nav>
+        <h3 class="sidebar-header">Other Options</h3>
+        <nav class="bottom-menu">
+            <ul>
+                <li><a href="PatientDashboard.html"><img src="images/Referrals.svg" alt="Dashboard" class="icon"> Dashboard</a></li>
+                <li><a href="LoginPatient.html"><img src="images/logout.svg" alt="Logout" class="icon"> Logout</a></li>
+            </ul>
+        </nav>
+    </div>    
+    <div class="main-content">
+        <h2>Patient Waiting Queue</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Patient Name</th>
+                    <th>Joined Date & Time</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>10</td>
+                    <td>Eddy Simpson</td>
+                    <td>Apr 23, 2021 - 10:00AM</td>
+                    <td>Wattala</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>Shalinda Fernando</td>
+                    <td>Apr 23, 2021 - 10:05AM</td>
+                    <td>Ja Ela</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>Sebastian Mullins</td>
+                    <td>Apr 23, 2021 - 10:15AM</td>
+                    <td>Jaffna</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>Sana Manning</td>
+                    <td>Apr 23, 2021 - 10:20AM</td>
+                    <td>Galle</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="meet-link">
+            <h3>Meet Link</h3>
+            <a href="https://meet.google.com/gfa-caog-gwq"><p id="status" style="color: green;">https://meet.google.com/gfa-caog-gwq</p></a>
+        </div>
+    </div>
+</body>
+</html>
