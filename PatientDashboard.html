@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>لوحة معلومات المريض</title>
+<style>
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+font-family: 'Roboto', sans-serif;
+}
+
+body {
+display: flex;
+min-height: 100vh;
+background-color: #f4f4f4;
+direction: rtl;
+}
+
+.sidebar-header {
+font-size: 16px;
+color: #004498;
+margin: 20px 0 10px;
+}
+
+.sidebar {
+width: 250px;
+background-color: #ffffff;
+padding: 20px;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+border-left: 1px solid gray;
+order: 2;
+position: fixed;
+height: 100%;
+}
+
+.logo {
+width: 100%;
+display: flex;
+justify-content: center;
+margin-bottom: 20px;
+}
+
+.logo img {
+height: 40px;
+}
+
+.menu,
+.bottom-menu {
+width: 100%;
+}
+
+.menu ul,
+.bottom-menu ul {
+list-style-type: none;
+padding: 0;
+}
+
+.menu li a,
+.bottom-menu li a {
+display: flex;
+align-items: center;
+padding: 12px 0;
+color: #333;
+text-decoration: none;
+transition: all 0.3s;
+}
+
+.menu li a:hover,
+.bottom-menu li a:hover {
+background-color: #e6f4ff;
+color: #0056b3;
+}
+
+.menu li a img,
+.bottom-menu li a img {
+margin-left: 10px;
+width: 20px;
+height: 20px;
+}
+
+.separator {
+width: 100%;
+height: 1px;
+background-color: #ddd;
+margin: 20px 0;
+}
+
+.main-content {
+flex-grow: 1;
+padding: 20px;
+background: #ffffff;
+order: 1;
+margin-right: 250px;
+}
+
+.greeting {
+text-align: right;
+font-size: 24px;
+color: #0056b3;
+margin-bottom: 20px;
+}
+
+.options {
+text-align: right;
+margin: 20px;
+}
+
+.options h4 {
+position: relative;
+margin: 10px;
+top: 60px;
+font-size: large;
+text-align: right;
+}
+
+.options p {
+position: relative;
+margin: 10px;
+top: 60px;
+text-align: right;
+}
+
+.button-container {
+display: flex;
+align-items: center;
+justify-content: space-around;
+}
+
+.button-container button {
+background-color: #004498;
+color: aliceblue;
+border: none;
+padding: 10px 20px;
+margin: 10px;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s, transform 0.2s;
+}
+
+.button-container button:hover {
+background-color: #0056b3;
+transform: translateY(-2px);
+}
+
+.button-container button:focus {
+outline: none;
+box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+.button-container figure {
+margin-top: 20px;
+}
+
+.button-container img {
+width: 100%;
+}
+
+.main-content table {
+width: 100%;
+border-collapse: collapse;
+margin: 20px 0;
+}
+
+.main-content table,
+.main-content th,
+.main-content td {
+border: 1px solid #ddd;
+}
+
+.main-content th,
+.main-content td {
+padding: 8px;
+text-align: right;
+}
+
+@media screen and (max-width: 768px) {
+.sidebar {
+width: 100%;
+height: auto;
+position: relative;
+}
+
+.main-content {
+margin-right: 0;
+}
+
+.sidebar,
+.main-content {
+padding: 10px;
+}
+}
+</style>
+
+</head>
+<body>
+<div class="sidebar">
+<div class="logo">
+<img src="images/Logo.png" alt="شعار رابط الصحة">
+</div>
+<h3 class="sidebar-header">الجلسات</h3>
+<nav class="menu">
+<ul>
+<li><a href="#"><img src="images/Customers.svg" alt="الاتصال بالطبيب" class="icon"> الاتصال بالطبيب</a></li>
+<li><a href="chatbot.html"><img src="images/message.svg" alt="الدردشة مع HealthBot" class="icon"> الدردشة مع HealthBot</a></li>
+<li><a href="waitforlink.html"><img src="images/time.svg" alt="قائمة انتظار المرضى" class="icon"> قائمة انتظار المرضى</a></li>
+</ul>
+</nav>
+<h3 class="sidebar-header">خيارات أخرى</h3>
+<nav class="bottom-menu">
+<ul>
+<li><a href="PatientDashboard.html"><img src="images/Referrals.svg" alt="لوحة المعلومات" class="icon"> لوحة المعلومات</a></li>
+<li><a href="LoginPatient.html"><img src="images/logout.svg" alt="تسجيل الخروج" class="icon"> تسجيل الخروج</a></li>
+</ul>
+</nav>
+</div>
+<div class="main-content">
+<div class="greeting">
+👋 مساء الخير
+</div>
+<div class="options">
+<h4>لوحة معلومات المريض</h4>
+<p>لوريم إيبسوم دولار سيت أميت، كونسيكتيتور أديبيسكينج إليت.</p>
+<div class="button-container">
+    <a href="waitforlink.html">
+        <button id="Contact_doc">الاتصال بالطبيب</button>
+    </a>
+    <a href="chatbot.html">
+        <button id="chat_withbot">الدردشة مع HealthBot</button>
+    </a>
+    <figure class="dashboard-image">
+        <img src="images/Oncology patient-amico 1.png" alt="مريض على المكتب">
+    </figure>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="initial-scale=1, width=device-width" />
+<link rel="stylesheet" href="./index.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;600&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" />
+<title>الاتصال بالطوارئ</title>
+<style>
+/* Reset some default styles */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+/* Basic Styles */
+body, html {
+width: 100%;
+height: 100%;
+font-family: 'Roboto', sans-serif; /* Main font */
+margin: 0;
+padding: 0;
+}
+
+/* Navbar specific styles */
+.navbar {
+width: 100%;
+height: 100px;
+background-color: #fff; /* White background */
+position: sticky;
+top: 0;
+left: 0;
+z-index: 1000; /* Ensures navbar stays on top */
+display: flex;
+justify-content: space-between; /* Distributes space between logo and nav items */
+padding: 10px 10px; /* Padding for some breathing room */
+align-items: center; /* Vertically centers the content */
+}
+
+.logo {
+display: flex;
+align-items: center;
+left: 10px; /* Ensures logo is centered with the text */
+}
+
+.logo-child {
+height: 60px;
+width: auto; /* Keeps the logo's aspect ratio */
+}
+
+.nav {
+display: flex;
+align-items: center;
+gap: 20px; /* Space between navigation items */
+}
+
+.elementbuttonsmallfilled, .elementbuttonsmallfilled1, .elementbuttonsmallfilled2 {
+padding: 10px 20px;
+border: none;
+background-color: #004498; /* Blue background */
+color: white; /* White text */
+font-size: 14px;
+border-radius: 5px; /* Rounded corners */
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.elementbuttonsmallfilled:hover, .elementbuttonsmallfilled1:hover, .elementbuttonsmallfilled2:hover {
+background-color: #0056b3; /* Darker blue on hover */
+}
+
+.emergency-contact {
+padding: 40px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+.frame-parent {
+display: flex;
+flex-direction: row-reverse;
+align-items: center;
+justify-content: center;
+width: 100%;
+}
+
+.public-health-rafiki-1 {
+max-width: 450px;
+width: 100%;
+height: auto;
+}
+
+/* Text content styling */
+.chef-login {
+font-size: 24px;
+font-weight: bold;
+margin-bottom: 10px;
+}
+
+.lorem-ipsum-dolor, .call-ambulance-xxxxxxxxxxxx {
+font-size: 18px;
+margin-bottom: 5px;
+}
+
+.suwaseriya-1990 {
+font-size: 16px;
+color: #666; /* Grey color for less important text */
+}
+
+.frame-wrapper {
+max-width: 500px;
+margin-right: 20px;
+text-align: right;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+.navbar {
+flex-direction: column;
+height: auto;
+}
+
+.nav {
+flex-direction: column;
+align-items: flex-start;
+gap: 10px;
+}
+
+.elementbuttonsmallfilled, .elementbuttonsmallfilled1, .elementbuttonsmallfilled2 {
+width: 100%; /* Full width buttons on smaller screens */
+margin-top: 10px;
+}
+
+.emergency-contact {
+padding: 20px;
+}
+
+.public-health-rafiki-1 {
+max-width: 100%;
+}
+
+.frame-parent {
+flex-direction: column;
+}
+}
+
+@media (max-width: 480px) {
+.elementbuttonsmallfilled, .elementbuttonsmallfilled1, .elementbuttonsmallfilled2 {
+font-size: 12px; /* Smaller font size for buttons on smaller screens */
+padding: 8px 16px;
+}
+
+.chef-login {
+font-size: 20px;
+}
+
+.lorem-ipsum-dolor, .call-ambulance-xxxxxxxxxxxx {
+font-size: 16px;
+}
+
+.suwaseriya-1990 {
+font-size: 14px;
+}
+}
+</style>
+</head>
+<body>
+<div class="emergency-contact">
+<header class="navbar">
+<div class="logolandie">
+<div class="logo">
+<img class="logo-child" loading="lazy" alt="شعار رابط الصحة" src="./images/Logo.png" />
+</div>
+</div>
+<div class="nav">
+<button class="elementbuttonsmallfilled" id="elementButtonSmallFilledContainer">
+<div class="button-label">الصفحة الرئيسية</div>
+</button>
+<button class="elementbuttonsmallfilled" id="elementButtonSmallFilledContainer1">
+<div class="button-label">أنا طبيب</div>
+</button>
+<button class="elementbuttonsmallfilled" id="elementButtonSmallFilledContainer2">
+<div class="button-label">أنا مريض</div>
+</button>
+</div>
+</header>
+<main class="emergency-contact-inner">
+<section class="frame-parent">
+<div class="frame-wrapper">
+<div class="ambulance-button-parent">
+<div class="ambulance-button">
+<h2 class="chef-login">الاتصال بالطوارئ</h2>
+<h4 class="lorem-ipsum-dolor">
+لوريم إيبسوم دولار سيت أميت، كونسيكتيتور أديبيسكينج إليت، سيد دو
+</h4>
+</div>
+<div class="ambulance-button1">
+<h4 class="call-ambulance-xxxxxxxxxxxx">
+اتصل بالإسعاف: xxxxxxxxxxxx
+</h4>
+<div class="suwaseriya-1990">سواسرية: 1990</div>
+</div>
+</div>
+</div>
+<img class="public-health-rafiki-1" loading="lazy" alt="" src="./images/Public health-rafiki 1.svg" />
+</section>
+</main>
+</div>
+
+<script>
+document.getElementById("elementButtonSmallFilledContainer").addEventListener("click", function () {
+window.location.href = "homepage.html";
+});
+document.getElementById("elementButtonSmallFilledContainer1").addEventListener("click", function () {
+window.location.href = "LoginDoctor.html";
+});
+document.getElementById("elementButtonSmallFilledContainer2").addEventListener("click", function () {
+window.location.href = "LoginPatient.html";
+});
+</script>
+</body>
+</html>

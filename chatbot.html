@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>لوحة معلومات المريض</title>
+<link rel="stylesheet" href="./dashboardpatient.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-8RZnVu7SbqPmczv2AapF/hQeS9xKUdEmJ9EkAuL4Vl5tD6dO3COfNUz7lR4OYi5JM34Ygp1x9jZyqHt/6oW3kA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+font-family: 'Roboto', sans-serif;
+}
+
+body {
+display: flex;
+min-height: 100vh;
+background-color: #f4f4f4;
+direction: rtl;
+}
+
+.sidebar {
+width: 250px;
+background-color: #f9f9f9;
+padding: 20px;
+position: fixed;
+height: 100%;
+}
+
+.logo img {
+width: 100%;
+margin-bottom: 20px;
+}
+
+.sidebar-header {
+color: #004498;
+margin-top: 20px;
+margin-bottom: 10px;
+}
+
+.logo {
+width: 100%;
+display: flex;
+justify-content: center;
+margin-bottom: 20px;
+}
+
+.logo img {
+height: 40px;
+}
+
+.menu,
+.bottom-menu {
+width: 100%;
+}
+
+.menu ul,
+.bottom-menu ul {
+list-style-type: none;
+padding: 0;
+}
+
+.menu li a,
+.bottom-menu li a {
+display: flex;
+align-items: center;
+padding: 12px 0;
+color: #333;
+text-decoration: none;
+transition: all 0.3s;
+}
+
+.menu li a:hover,
+.bottom-menu li a:hover {
+background-color: #e6f4ff;
+color: #0056b3;
+}
+
+.menu li a i,
+.bottom-menu li a i {
+margin-left: 10px;
+}
+
+.separator {
+width: 100%;
+height: 1px;
+background-color: #ddd;
+margin: 20px 0;
+}
+
+.main-content {
+flex-grow: 1;
+padding: 20px;
+background: #ffffff;
+margin-right: 270px;
+}
+
+.greeting {
+text-align: right;
+font-size: 24px;
+color: #0056b3;
+margin-bottom: 20px;
+}
+
+.options {
+text-align: right;
+margin: 20px;
+}
+
+.options h4 {
+position: relative;
+margin: 10px;
+top: 60px;
+font-size: large;
+text-align: right;
+}
+
+.options p {
+position: relative;
+margin: 10px;
+top: 60px;
+text-align: right;
+}
+
+.button-container {
+display: flex;
+align-items: center;
+justify-content: space-around;
+}
+
+.button-container button {
+background-color: #004498;
+color: aliceblue;
+border: none;
+padding: 10px 20px;
+margin: 10px;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s, transform 0.2s;
+}
+
+.button-container button:hover {
+background-color: #0056b3;
+transform: translateY(-2px);
+}
+
+.button-container button:focus {
+outline: none;
+box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+.button-container figure {
+margin-top: 20px;
+}
+
+.button-container img {
+width: 100%;
+}
+
+.main-content table {
+width: 100%;
+border-collapse: collapse;
+margin: 20px 0;
+}
+
+.main-content table,
+.main-content th,
+.main-content td {
+border: 1px solid #ddd;
+}
+
+.main-content th,
+.main-content td {
+padding: 8px;
+text-align: right;
+}
+
+.chat-container {
+flex-grow: 1;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+padding: 20px;
+margin-right: 270px;
+background-color: #ffffff;
+}
+
+.chat-box {
+flex-grow: 1;
+padding: 15px;
+overflow-y: auto;
+max-height: calc(100vh - 150px);
+}
+
+.message {
+padding: 10px 15px;
+margin: 10px 0;
+border-radius: 10px;
+width: 100%;
+word-wrap: break-word;
+}
+
+.received {
+background-color: #d6e6ff;
+text-align: left;
+}
+
+.sent {
+background-color: #f0f0f0;
+text-align: right;
+}
+
+.chat-input {
+padding: 20px;
+background-color: #ffffff;
+border-top: 1px solid #ccc;
+display: flex;
+align-items: center;
+}
+
+.chat-input input {
+flex-grow: 1;
+margin-left: 10px;
+padding: 15px;
+border: 1px solid #ccc;
+border-radius: 25px;
+outline: none;
+transition: border-color 0.3s;
+font-size: 16px;
+background-color: #f9f9f9;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+overflow-wrap: break-word;
+word-break: break-all;
+text-align: left;
+}
+
+.chat-input input:focus {
+border-color: #007bff;
+box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.chat-input button {
+padding: 12px 25px;
+background-color: #004498;
+color: white;
+border: none;
+border-radius: 25px;
+cursor: pointer;
+transition: background-color 0.3s, transform 0.2s;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+display: flex;
+align-items: center;
+}
+
+.chat-input button i {
+margin-left: 5px;
+}
+
+.chat-input button:hover {
+background-color: #0056b3;
+transform: translateY(-2px);
+}
+
+.chat-input button:focus {
+outline: none;
+box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+@media screen and (max-width: 768px) {
+.sidebar {
+width: 100%;
+height: auto;
+position: relative;
+border-left: none;
+border-bottom: 1px solid gray;
+}
+
+.main-content,
+.chat-container {
+margin-right: 0;
+padding: 10px;
+}
+}
+</style>
+</head>
+<body>
+<div class="sidebar">
+<div class="logo">
+<img src="images/Logo.png" alt="شعار رابط الصحة">
+</div>
+<h3 class="sidebar-header">الجلسات</h3>
+<nav class="menu">
+<ul>
+<li><a href="#"><i class="fas fa-user-md"></i> الاتصال بالطبيب</a></li>
+<li><a href="chatbot.html"><i class="fas fa-comments"></i> الدردشة مع HealthBot</a></li>
+<li><a href="#"><i class="fas fa-list-alt"></i> قائمة انتظار المرضى</a></li>
+</ul>
+</nav>
+<h3 class="sidebar-header">خيارات أخرى</h3>
+<nav class="bottom-menu">
+<ul>
+<li><a href="PatientDashboard.html"><i class="fas fa-tachometer-alt"></i> لوحة المعلومات</a></li>
+<li><a href="LoginPatient.html"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a></li>
+</ul>
+</nav>
+</div>
+<div class="chat-container">
+<h2>الدردشة مع HealthBot</h2>
+<div class="chat-box" id="chat-box">
+<div class="message received">
+<p>مرحبًا! كيف يمكنني مساعدتك اليوم؟</p>
+</div>
+<!-- Previous chat messages go here -->
+</div>
+<div class="chat-input">
+<input id="user-input" type="text" placeholder="اكتب رسالتك...">
+<button id="send-btn" type="button"><i class="fas fa-paper-plane"></i> إرسال</button>
+</div>
+</div>
+<script>
+document.getElementById("Contact_doc").addEventListener("click", function () {
+window.location.href = "";
+});
+document.getElementById("chat_withbot").addEventListener("click", function () {
+window.location.href = "chatbot.html";
+});
+
+document.getElementById("send-btn").addEventListener("click", sendMessage);
+document.getElementById("user-input").addEventListener("keypress", function(e) {
+if (e.key === 'Enter') {
+sendMessage();
+}
+});
+
+let sessionID = generateSessionID(); // Generate a session ID
+function generateSessionID() {
+// Generate a unique session ID using JavaScript
+return Math.random().toString(36).substr(2, 9);
+}
+function sendMessage() {
+var userInput = document.getElementById("user-input").value.trim();
+if (userInput !== "") {
+var chatBox = document.getElementById("chat-box");
+// Display user message
+displayMessage(userInput, "sent");
+// Send message to the server
+sendMessageToServer(userInput)
+.then(response => {
+// Display server response
+displayMessage(response.response, "received");
+})
+.catch(error => {
+console.error("Error sending message:", error);
+displayMessage("عذرًا! حدث خطأ ما.", "received");
+});
+// Scroll to the bottom of the chat box
+chatBox.scrollTop = chatBox.scrollHeight;
+// Clear the input field
+document.getElementById("user-input").value = "";
+}
+}
+function displayMessage(message, messageType) {
+var chatBox = document.getElementById("chat-box");
+var messageDiv = document.createElement("div");
+messageDiv.classList.add("message", messageType);
+messageDiv.innerHTML = "<p>" + message + "</p>";
+chatBox.appendChild(messageDiv);
+}
+function sendMessageToServer(message) {
+return fetch('http://127.0.0.1:8080/chat', {
+method: 'POST',
+headers: {
+'Content-Type': 'application/json',
+},
+body: JSON.stringify({ prompt: message, sessionID: sessionID }), // Include sessionID in the request
+})
+.then(response => {
+if (!response.ok) {
+throw new Error('Network response was not ok');
+}
+return response.json();
+});
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>لوحة معلومات المريض</title>
+<link rel="stylesheet" href="./dashboardpatient.css" />
+</head>
+<style>
+body {
+font-family: 'Arial, sans-serif';
+direction: rtl;
+text-align: right;
+}
+
+h2 {
+color: #004498;
+margin-bottom: 20px;
+}
+
+table {
+width: 100%;
+border-collapse: collapse;
+margin-bottom: 20px;
+}
+
+thead {
+background-color: #f4f4f4;
+}
+
+th, td {
+text-align: right;
+padding: 8px;
+border-bottom: 1px solid #ccc;
+}
+
+.meet-link {
+position: relative;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 10px;
+box-shadow: #ccc;
+width: 100%;
+margin-top: 30px;
+background-color: #f9f9f9;
+}
+
+.meet-link h3 {
+margin-top: 0;
+color: #004498;
+}
+
+.sidebar {
+width: 250px;
+background-color: #f9f9f9;
+padding: 20px;
+position: fixed;
+height: 100%;
+}
+
+.logo img {
+width: 100%;
+margin-bottom: 20px;
+}
+
+.sidebar-header {
+color: #004498;
+margin-top: 20px;
+margin-bottom: 10px;
+}
+
+.menu, .bottom-menu {
+list-style: none;
+padding: 0;
+}
+
+.menu li, .bottom-menu li {
+margin-bottom: 10px;
+}
+
+.menu li a, .bottom-menu li a {
+display: flex;
+align-items: center;
+text-decoration: none;
+color: #000;
+padding: 10px;
+border-radius: 5px;
+transition: background-color 0.3s;
+}
+
+.menu li a:hover, .bottom-menu li a:hover {
+background-color: #ddd;
+}
+
+.icon {
+margin-left: 10px;
+}
+
+.main-content {
+margin-right: 270px;
+padding: 20px;
+}
+
+@media screen and (max-width: 768px) {
+.sidebar {
+width: 100%;
+height: auto;
+position: relative;
+}
+
+.main-content {
+margin-right: 0;
+}
+
+.sidebar, .main-content {
+padding: 10px;
+}
+}
+</style>
+<body>
+<div class="sidebar">
+<div class="logo">
+<img src="images/Logo.png" alt="شعار رابط الصحة">
+</div>
+<h3 class="sidebar-header">الجلسات</h3>
+<nav class="menu">
+<ul>
+<li><a href="#"><img src="images/Customers.svg" alt="الاتصال بالطبيب" class="icon"> الاتصال بالطبيب</a></li>
+<li><a href="chatbot.html"><img src="images/message.svg" alt="الدردشة مع HealthBot" class="icon"> الدردشة مع HealthBot</a></li>
+<li><a href="#"><img src="images/time.svg" alt="قائمة انتظار المرضى" class="icon"> قائمة انتظار المرضى</a></li>
+</ul>
+</nav>
+<h3 class="sidebar-header">خيارات أخرى</h3>
+<nav class="bottom-menu">
+<ul>
+<li><a href="PatientDashboard.html"><img src="images/Referrals.svg" alt="لوحة المعلومات" class="icon"> لوحة المعلومات</a></li>
+<li><a href="LoginPatient.html"><img src="images/logout.svg" alt="تسجيل الخروج" class="icon"> تسجيل الخروج</a></li>
+</ul>
+</nav>
+</div>
+<div class="main-content">
+<h2>قائمة انتظار المرضى</h2>
+<table>
+<thead>
+<tr>
+<th>رقم</th>
+<th>اسم المريض</th>
+<th>تاريخ ووقت الانضمام</th>
+<th>الموقع</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10</td>
+<td>إيدي سيمبسون</td>
+<td>23 أبريل 2021 - 10:00 صباحاً</td>
+<td>واتالا</td>
+</tr>
+<tr>
+<td>11</td>
+<td>شاليندا فرناندو</td>
+<td>23 أبريل 2021 - 10:05 صباحاً</td>
+<td>جا إيلا</td>
+</tr>
+<tr>
+<td>12</td>
+<td>سيباستيان مولينز</td>
+<td>23 أبريل 2021 - 10:15 صباحاً</td>
+<td>جافنا</td>
+</tr>
+<tr>
+<td>13</td>
+<td>سانا مانينغ</td>
+<td>23 أبريل 2021 - 10:20 صباحاً</td>
+<td>جالي</td>
+</tr>
+</tbody>
+</table>
+<div class="meet-link">
+<h3>رابط الاجتماع</h3>
+<a href="https://meet.google.com/gfa-caog-gwq"><p id="status" style="color: green;">https://meet.google.com/gfa-caog-gwq</p></a>
+</div>
+</div>
+</body>
+</html>

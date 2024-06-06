@@ -1,0 +1,191 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic Styles */
+body, html {
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto', sans-serif; /* Main font */
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar specific styles */
+
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    left: 10px; /* Ensures logo is centered with the text */
+}
+
+.logo-child {
+    height: 60px;
+    width: auto; /* Keeps the logo's aspect ratio */
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between navigation items */
+}
+
+.elementbuttonsmallfilled, .elementbuttonsmallfilled1, .elementbuttonsmallfilled2 {
+    padding: 10px 20px;
+    border: none;
+    background-color: #004498; /* Blue background */
+    color: white; /* White text */
+    font-size: 14px;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.elementbuttonsmallfilled:hover, .elementbuttonsmallfilled1:hover, .elementbuttonsmallfilled2:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.emergency-contact {
+    background-color: #ffffff;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.frame-parent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.public-health-rafiki-1 {
+    max-width: 450px; 
+    width: 100%;
+    height: auto;
+    margin-left: 20px;
+}
+
+/* Login form container */
+.login-container {
+    background-color: #ffffff;
+    padding: 30px;
+    width: 500px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.login-container h2 {
+    position: relative;
+    margin-bottom: 20px;
+    margin-left: 15px;
+    text-align: left;
+}
+
+.login-container form input[type="email"],
+.login-container form input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-container form button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #004498;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-container form button:hover {
+    background-color: #0056b3;
+}
+
+.forgot-password {
+    font-size: 12px;
+    color: #666666;
+    margin-top: 10px;
+    text-align: right; /* Aligns text to the right */
+}
+
+.register-doctor {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav button {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .login-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .emergency-contact {
+        padding: 20px;
+    }
+
+    .frame-parent {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .public-health-rafiki-1 {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .elementbuttonsmallfilled, .elementbuttonsmallfilled1, .elementbuttonsmallfilled2 {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+
+    .login-container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .login-container h2 {
+        font-size: 18px;
+    }
+
+    .login-container form input[type="email"],
+    .login-container form input[type="password"] {
+        width: calc(100% - 16px);
+        padding: 8px;
+    }
+
+    .login-container form button {
+        padding: 8px;
+    }
+}

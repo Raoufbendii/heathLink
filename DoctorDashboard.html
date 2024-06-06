@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>لوحة تحكم الطبيب</title>
+<link rel="stylesheet" href="dashboarddoctor.css">
+</head>
+<body>
+<div class="container">
+<aside class="sidebar">
+<img src="images/logo.png" alt="شعار رابط الصحة" class="logo">
+<ul class="sidebar-menu">
+<li>
+الجلسات
+<ul>
+<li><img src="images/customers.svg" alt="إنشاء اجتماع" class="sub-icon"><a href="#">إنشاء اجتماع</a></li>
+</ul>
+</li>
+<li>
+خيارات أخرى
+<ul>
+<li><img src="images/Referrals.svg" alt="لوحة المعلومات" class="sub-icon"><a href="DoctorDashboard.html">لوحة المعلومات</a></li>
+<li><img src="images/logout.svg" alt="تسجيل الخروج" class="sub-icon"><a href="LoginDoctor.html">تسجيل الخروج</a></li>
+<li><img src="images/Vector-2.png" alt="اتصال طوارئ" class="sub-icon"><a href="index.css">اتصال طوارئ</a></li>
+</ul>
+</li>
+</ul>
+</aside>
+<main class="main-content">
+<header class="header">
+<h2 class="greeting">👋 مساء الخير</h2>
+<h3 class="sub-title">لوحة تحكم الطبيب</h3>
+</header>
+
+<section class="create-meeting">
+<h3>إنشاء اجتماع</h3>
+<p>لوريم إيبسوم دولار سيت أميت، كونسيكتيتور أديبيسكينج إليت.</p>
+<button class="meeting-button" onclick="showNotification()">إنشاء اجتماع</button>
+<img src="images/Face to face-rafiki 2.png" alt="إنشاء اجتماع" class="illustration">
+</section>
+
+<section class="patient-queue">
+<h3>قائمة انتظار المرضى</h3>
+<table>
+<thead>
+<tr>
+<th>اسم المريض</th>
+<th>تاريخ ووقت الانضمام</th>
+<th>البريد الإلكتروني</th>
+<th>خيارات</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>شاليندا فرناندو</td>
+<td>23 أبريل 2021 - 10:00 صباحاً</td>
+<td>patient@gmail.com</td>
+<td><button class="entry-button">طلب دخول</button></td>
+</tr>
+<tr>
+<td>إيدي كونسول</td>
+<td>23 أبريل 2021 - 10:05 صباحاً</td>
+<td>patient2@gmail.com</td>
+<td><button class="entry-button">طلب دخول</button></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+<!-- Notification bar -->
+<div class="notification-bar" id="notification-bar">
+تم نسخ رابط الاجتماع إلى الحافظة
+</div>
+</main>
+</div>
+
+<script>
+function showNotification() {
+const notificationBar = document.getElementById('notification-bar');
+notificationBar.style.display = 'flex';
+setTimeout(() => {
+notificationBar.style.display = 'none';
+}, 5000);
+}
+</script>
+</body>
+</html>

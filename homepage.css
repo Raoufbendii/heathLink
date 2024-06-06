@@ -1,0 +1,286 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f8ff;
+    color: #333;
+    direction: rtl; /* Makes writing start from right to left */
+}
+
+header {
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 20px 40px;
+}
+
+.navbar {
+    width: 100%;
+    height: 100px;
+    background-color: transparent; 
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensures navbar stays on top */
+    display: flex;
+    justify-content: space-between; /* Distributes space between logo and nav items */
+    padding: 10px 10px; /* Padding for some breathing room */
+    align-items: flex-start; /* Aligns items at the top */
+}
+
+.logo {
+    height: 40px;
+}
+
+.nav-buttons .button {
+    margin-right: 20px; /* Adjusted for RTL */
+    padding: 10px 20px;
+    border: 1px solid #004498;
+    border-radius: 8px;
+    background-color: #004498;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.nav-buttons .button:hover {
+    background-color: #145ea8;
+}
+
+.hero {
+    text-align: right; /* Adjusted for RTL */
+    position: relative;
+    overflow: hidden;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse; /* Adjusted for RTL */
+    width: 100%; /* Takes the full width of the page */
+    padding: 0; /* Remove padding to take the full width */
+    margin: 0; /* Remove margin to take the full width */
+}
+
+
+.hero-content {
+    width: 100%;
+    margin-right: auto; /* Corrected to align properly in RTL */
+    padding: 60px 40px; /* Ensure padding for content */
+}
+
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    max-width: 600px;
+}
+
+.about-button {
+    padding: 10px 30px;
+    background-color: #004498;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.about-button:hover {
+    background-color: #145ea8;
+}
+
+.hero-image {
+    top: 0;
+    width: 500px;
+    right: 0; /* Adjusted for RTL */
+}
+
+.mission {
+    padding: 60px 40px;
+    background-color: #ffffff;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row-reverse; /* Adjusted for RTL */
+}
+
+.rocket-image {
+    width: 350px;
+    margin-left: 40px; /* Adjusted for RTL */
+}
+
+.mission-content {
+    max-width: 400px;
+}
+
+.mission h2 {
+    font-size: 32px;
+    margin-bottom: 16px;
+}
+
+.mission p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.features {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-direction: row-reverse; /* Adjusted for RTL */
+}
+
+.feature {
+    max-width: 150px;
+    text-align: center;
+}
+
+.feature img {
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.feature h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.feature p {
+    font-size: 14px;
+    color: #666666;
+}
+
+.premium {
+    padding: 80px 40px;
+    text-align: center;
+    background-color: #e0efff;
+    border-radius: 0 0 40px 40px;
+}
+
+.premium h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.premium p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.price {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.buy-button {
+    padding: 10px 30px;
+    background-color: #004498;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.buy-button:hover {
+    background-color: #145ea8;
+}
+
+footer {
+    background-color: #1a1e26;
+    text-align: center;
+    padding: 40px 0;
+    color: #ffffff;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    margin: 0;
+}
+
+.footer-logo {
+    position: relative;
+    height: 40px;
+    right: -30%; /* Adjusted for RTL */
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+    position: relative;
+    bottom: 0;
+    right: -30%; /* Adjusted for RTL */
+    transform: translateY(-20px);
+}
+
+.footer-divider {
+    width: 80%;
+    border: 1px solid #ffffff;
+    margin: 20px 0;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+    position: absolute;
+    bottom: 0;
+    left: 10%; /* Adjusted for RTL */
+    transform: translateY(-20px);
+    margin: 0;
+}
+
+.social-icons a img {
+    width: 15px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .hero, .mission, .features {
+        flex-direction: column; /* Stacks elements vertically on small screens */
+    }
+
+    .hero-image, .rocket-image {
+        width: 100%; /* Images take full width on small screens */
+    }
+
+    .navbar {
+        height: auto;
+        padding: 10px 20px;
+    }
+
+    .navbar .nav-buttons {
+        flex-direction: column;
+    }
+
+    .nav-buttons .button {
+        margin: 10px 0;
+    }
+
+    .premium p, .hero p, .mission p {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+}
+
