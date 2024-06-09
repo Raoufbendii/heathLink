@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;600&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" />
+</head>
+<body>
+    <div class="emergency-contact">
+        <header class="navbar">
+            <div class="logo">
+                <img src="./assets/images/Logo.png" class="logo-large" alt="Large Logo">
+                <img src="./assets/images/Logo.png" class="logo-small" alt="Small Logo">
+            </div>
+        </header>
+        <main class="emergency-contact-inner">
+            <section class="frame-parent">
+                <div class="login-container">
+                    <h2>Patient Register</h2>
+                    <!-- Error message display -->
+                    <div id="error-message" style="color: red;"></div>
+                    <form id="register-form" action="patient_register.php" method="POST" class="input-grid">
+                        <input type="text" placeholder="First Name" id="first_name" name="first_name" required>
+                        <input type="text" placeholder="Last Name" id="last_name" name="last_name" required>
+                        <input type="email" placeholder="Email" id="email" name="email" required>
+                        <input type="password" placeholder="Password" id="password" name="password" required>
+                        <input type="password" placeholder="Confirm Password" id="confirm_password" name="confirm_password" required>
+                        <input type="text" placeholder="Location" id="location" name="location" required>
+                        <input type="text" placeholder="Phone" id="phone" name="phone" required>
+                        <input type="number" placeholder="Age" id="age" name="age" required>
+                        <select id="gender" name="gender" required>
+                            <option value="" disabled selected>Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                        <button type="submit">Register Patient</button>
+                    </form>
+                    <p class="register-doctor">Already have an account? <a href="login.php" style="color: #666666;">Login as a patient</a></p>
+                </div>
+                
+                <img class="public-health-rafiki-1" loading="lazy" alt="Healthcare interaction" src="./assets/images/Physical therapy exercise-bro 1.png" />
+            </section>
+        </main>
+    </div>
+
+    <!-- Backend JS -->
+    <script>
+    document.getElementById("register-form").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        const formData = new FormData(this); // Get form data
+
+        fetch('patient_register.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            // Display error message if any
+            if (data) {
+                const errorMessageElement = document.getElementById('error-message');
+                errorMessageElement.textContent = data;
+                errorMessageElement.style.color = 'red'; // Set text color to red
+            } else {
+                // Redirect to patient's dashboard or any other page
+                window.location.href = "patient/index.php";
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    });
+    </script>
+</body>
+</html>
